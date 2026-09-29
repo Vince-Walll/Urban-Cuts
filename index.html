@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Urban Cuts | Kim, Barber</title>
+<meta name="description" content="Kim is a barber at Urban Cuts. Skin fades, tapers, classic cuts, beard trims and hot towel shaves. Walk-ins welcome.">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="Urban Cuts | Kim, Barber"><meta property="og:description" content="Sharp fades, clean lines and a chair that's always ready."><meta property="og:image" content="background.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%88%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BarberShop","name":"Urban Cuts","employee":{"@type":"Person","name":"Kim","jobTitle":"Barber"},"telephone":"+639000000000","email":"kim@example.com","openingHours":["Mo-Sa 10:00-20:00","Su 12:00-18:00"]}</script>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--w:#fff;--soft:rgba(255,255,255,.82);--glass:rgba(14,16,22,.38);--edge:rgba(255,255,255,.26);--blue:#5aa2ff;--red:#e2504c}
@@ -62,10 +67,10 @@ main{position:relative;z-index:4}
 .item:hover img{transform:scale(1.06)}
 .item span{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:2rem 1rem .8rem;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.7))}
 
-.vids{display:grid;grid-template-columns:repeat(2,1fr);gap:2.4rem}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.4rem}
 .vid{border-radius:18px;overflow:hidden;animation:float 7s ease-in-out infinite;box-shadow:0 30px 60px rgba(0,0,0,.5);border:1px solid var(--edge);background:rgba(10,12,18,.45);backdrop-filter:blur(12px)}
-.vid:nth-child(2){animation-delay:-3s;margin-top:2rem}
-.vid video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.vid:nth-child(2){animation-delay:-3s;margin-top:2rem}.vid:nth-child(3){animation-delay:-5s}
+.vid video{display:block;width:100%;aspect-ratio:9/16;max-height:72vh;object-fit:contain;background:#000}
 .vid p{padding:.8rem 1.1rem;font-weight:600}
 .vid small{display:block;font-weight:400;color:var(--soft)}
 
@@ -136,15 +141,46 @@ nav .links a:hover{color:#fff}
   .stats b{font-size:1.5rem}
 }
 @media(prefers-reduced-motion:reduce){.brand i{animation:none}html{scroll-behavior:auto}}
+
+/* ---- signature finish: brass accent, preloader, reviews, booking ---- */
+:root{--gold:#c9a45c}
+:focus-visible{outline-color:var(--gold)}
+.btn:hover{background:var(--gold);color:#0b0b0d}
+.stats b,.svc b,footer h3{color:var(--gold)}
+.soc a:hover{background:var(--gold)}
+.soc a:hover svg{stroke:#0b0b0d}
+.sec .head h2::after{content:"";display:block;width:56px;height:3px;margin-top:.8rem;background:var(--gold)}
+.glass{border-top-color:rgba(201,164,92,.55)}
+#pre{position:fixed;inset:0;z-index:100;background:#07080b;display:grid;place-items:center;text-align:center;transition:opacity .7s .1s,visibility .7s .1s}
+#pre.done{opacity:0;visibility:hidden}
+#pre .pole{width:16px;height:56px;margin:0 auto 1.2rem;border-radius:8px;background:repeating-linear-gradient(180deg,var(--red) 0 10px,#fff 10px 20px,var(--blue) 20px 30px);animation:pole .8s linear infinite}
+#pre h1{font-size:2.4rem;letter-spacing:.14em}
+#pre p{color:var(--gold);letter-spacing:.3em;font-size:.8rem;margin-top:.4rem}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.4rem}
+.rev blockquote{padding:1.5rem;animation:float 7s ease-in-out infinite}
+.rev blockquote:nth-child(2){animation-delay:-3s}
+.rev .stars{color:var(--gold);letter-spacing:.15em;margin-bottom:.6rem}
+.rev p{color:var(--soft);margin-bottom:.8rem}
+.rev cite{font-style:normal;font-weight:600}
+.book{margin-top:3.5rem;padding:1.8rem;display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:1rem;align-items:end;background:rgba(255,255,255,.04)}
+.book h3{grid-column:1/-1;margin:0}
+.book label{display:grid;gap:.35rem;font-size:.9rem;color:var(--soft)}
+.book input,.book select{width:100%;padding:.75rem .9rem;border-radius:12px;border:1px solid var(--edge);background:rgba(255,255,255,.07);color:#fff;font:inherit;color-scheme:dark}
+.book select option{background:#111}
+.book button{border:0;cursor:pointer;font:600 1rem Barlow;padding:.85rem 1.6rem}
+@media(max-width:1000px){.book{grid-template-columns:1fr 1fr}.book button{grid-column:1/-1}}
+@media(max-width:820px){.book{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){#pre,#pre .pole,.rev blockquote{animation:none;transition:none}}
 @media(prefers-reduced-motion:reduce){.item,.vid,#hint i{animation:none}}
 </style>
 </head>
 <body>
 
+<div id="pre"><div><div class="pole"></div><h1>URBAN CUTS</h1><p>BARBER SHOP</p></div></div>
 <div id="bar"></div>
 <nav class="glass">
   <a class="brand" href="#" onclick="scrollTo(0,0);return false"><i></i>Urban Cuts</a>
-  <div class="links"><a href="#" data-s="3.6">About Kim</a><a href="#work">Work</a><a href="#videos">Videos</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
+  <div class="links"><a href="#" data-s="3.6">About Kim</a><a href="#work">Work</a><a href="#videos">Videos</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
   <a class="btn" href="#contact">Book now</a>
 </nav>
 <div id="lb"><img alt=""></div>
@@ -180,12 +216,12 @@ nav .links a:hover{color:#fff}
     <div class="wrap">
       <div class="head glass"><h2>Kim's work</h2><p>Recent cuts, fades and shape-ups from the chair.</p></div>
       <div class="floats">
-        <figure class="item"><img src="work1.jpg" alt="Skin fade" onerror="this.remove()"><span>Skin fade</span></figure>
-        <figure class="item"><img src="work2.jpg" alt="Taper fade" onerror="this.remove()"><span>Taper fade</span></figure>
-        <figure class="item"><img src="work3.jpg" alt="Beard shape-up" onerror="this.remove()"><span>Beard shape-up</span></figure>
-        <figure class="item"><img src="work4.jpg" alt="Classic cut" onerror="this.remove()"><span>Classic cut</span></figure>
-        <figure class="item"><img src="work5.jpg" alt="Line-up" onerror="this.remove()"><span>Line-up</span></figure>
-        <figure class="item"><img src="work6.jpg" alt="Styling" onerror="this.remove()"><span>Styling</span></figure>
+        <figure class="item"><img loading="lazy" decoding="async" src="work1.jpg" alt="Skin fade" onerror="this.remove()"><span>Skin fade</span></figure>
+        <figure class="item"><img loading="lazy" decoding="async" src="work2.jpg" alt="Taper fade" onerror="this.remove()"><span>Taper fade</span></figure>
+        <figure class="item"><img loading="lazy" decoding="async" src="work3.jpg" alt="Beard shape-up" onerror="this.remove()"><span>Beard shape-up</span></figure>
+        <figure class="item"><img loading="lazy" decoding="async" src="work4.jpg" alt="Classic cut" onerror="this.remove()"><span>Classic cut</span></figure>
+        <figure class="item"><img loading="lazy" decoding="async" src="work5.jpg" alt="Line-up" onerror="this.remove()"><span>Line-up</span></figure>
+        <figure class="item"><img loading="lazy" decoding="async" src="work6.jpg" alt="Styling" onerror="this.remove()"><span>Styling</span></figure>
       </div>
     </div>
   </section>
@@ -194,8 +230,9 @@ nav .links a:hover{color:#fff}
     <div class="wrap">
       <div class="head glass"><h2>In the chair</h2><p>Watch the process, from first pass to final line-up.</p></div>
       <div class="vids">
-        <div class="vid"><video controls preload="none" src="video1.mp4"></video><p>Skin fade start to finish<small>Replace with your video</small></p></div>
-        <div class="vid"><video controls preload="none" src="video2.mp4"></video><p>Beard shape-up<small>Replace with your video</small></p></div>
+        <div class="vid"><video controls playsinline preload="metadata" src="video1.mp4"></video><p>Skin fade start to finish<small>Replace with your video</small></p></div>
+        <div class="vid"><video controls playsinline preload="metadata" src="video2.mp4"></video><p>Beard shape-up<small>Replace with your video</small></p></div>
+        <div class="vid"><video controls playsinline preload="metadata" src="video3.mp4"></video><p>Before and after<small>Replace with your video</small></p></div>
       </div>
     </div>
   </section>
@@ -212,6 +249,16 @@ nav .links a:hover{color:#fff}
       </div>
     </div>
   </section>
+  <section class="sec" id="reviews">
+    <div class="wrap">
+      <div class="head glass"><h2>What clients say</h2><p>Sample reviews for layout. Replace them with real client feedback.</p></div>
+      <div class="rev">
+        <blockquote class="glass"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Best fade I've had in years. Clean, quick and he actually listens.</p><cite>Marco D.</cite></blockquote>
+        <blockquote class="glass"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Great shop and even better service. My beard has never looked this sharp.</p><cite>Jay R.</cite></blockquote>
+        <blockquote class="glass"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Took my son for his first real haircut. He was patient and it came out perfect.</p><cite>Anna L.</cite></blockquote>
+      </div>
+    </div>
+  </section>
   <div style="height:12vh"></div>
 </main>
 
@@ -221,13 +268,21 @@ nav .links a:hover{color:#fff}
     <div><h3>Contact</h3><ul>
       <li>Phone: <a href="tel:+639000000000">+63 900 000 0000</a></li>
       <li>Email: <a href="mailto:kim@example.com">kim@example.com</a></li>
-      <li>Urban Cuts, [Street, City]</li></ul></div>
+      <li>Urban Cuts, [Street, City] <a href="https://maps.google.com/?q=Urban+Cuts" target="_blank" rel="noopener">Directions</a></li><li>Mon to Sat, 10 AM to 8 PM</li><li>Sunday, 12 PM to 6 PM</li></ul></div>
     <div><h3>Find Kim online</h3><div class="soc">
       <a href="https://facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg></a>
       <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="#fff"/></svg></a>
       <a href="https://tiktok.com/@yourhandle" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16 3c.3 2.4 1.8 4 4 4.2v3.2c-1.500 0-2.900-.5-4-1.300V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.300a2.700 2.700 0 1 0 1.800 2.500V3z"/></svg></a>
     </div></div>
   </div>
+  <form class="book glass" id="book">
+    <h3>Request an appointment</h3>
+    <label>Name<input name="n" required autocomplete="name"></label>
+    <label>Phone<input name="p" type="tel" required autocomplete="tel"></label>
+    <label>Service<select name="s"><option>Haircut</option><option>Skin fade</option><option>Beard trim</option><option>Hot towel shave</option><option>Cut + beard</option><option>Kids' cut</option></select></label>
+    <label>Preferred date and time<input name="d" type="datetime-local" required></label>
+    <button class="btn" type="submit">Send request</button>
+  </form>
   <p class="copy">&copy; 2026 Kim at Urban Cuts. <a class="top" href="#" onclick="scrollTo(0,0);return false">Back to top</a></p>
 </footer>
 
@@ -294,6 +349,14 @@ document.querySelectorAll('.item').forEach(it=>{
 });
 lb.addEventListener('click',()=>lb.classList.remove('on'));
 addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+
+// preloader + booking request
+const pre=$('pre'),t0=performance.now();document.body.style.overflow='hidden';
+const openSite=()=>{const w=Math.max(0,900-(performance.now()-t0));setTimeout(()=>{pre.classList.add('done');document.body.style.overflow=''},w)};
+if(document.readyState==='complete')openSite();else addEventListener('load',openSite);setTimeout(openSite,3500);
+$('book').addEventListener('submit',e=>{e.preventDefault();const f=e.target,v=n=>f.elements[n].value;
+  const body=`Name: ${v('n')}%0D%0APhone: ${v('p')}%0D%0AService: ${v('s')}%0D%0APreferred: ${v('d')}`;
+  location.href=`mailto:kim@example.com?subject=${encodeURIComponent('Appointment request: '+v('s'))}&body=${body}`});
 </script>
 </body>
 </html>
